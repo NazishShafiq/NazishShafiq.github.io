@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nazish Shafiq | Software Engineering Student</title>
+<meta name="description" content="Portfolio of Nazish Shafiq, a Software Engineering student learning C++, OOP, data structures and web development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wine:#7b1230; --wine-deep:#4a0a1c; --rose:#e8456b; --blush:#fde8ee;
+  --bg:#150408; --surface:#220811; --surface-2:#2d0c19; --line:rgba(255,255,255,.09);
+  --text:#f6e9ed; --muted:#c9a9b3; --accent:#ff6b8b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;
+  background-image:radial-gradient(900px 500px at 85% -10%,rgba(232,69,107,.18),transparent 60%),
+                   radial-gradient(700px 500px at -10% 30%,rgba(123,18,48,.35),transparent 60%);
+  background-attachment:fixed}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:88px 0}
+.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:10px}
+h2{font-size:clamp(1.9rem,4vw,2.6rem);margin-bottom:36px}
+
+/* nav */
+header{position:fixed;inset:0 0 auto 0;z-index:50;backdrop-filter:blur(14px);background:rgba(21,4,8,.72);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:Fraunces,serif;font-weight:700;font-size:1.2rem}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:26px;list-style:none}
+.links a{font-size:.92rem;color:var(--muted);transition:color .2s}
+.links a:hover,.links a.active{color:#fff}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 10px;font-size:1.1rem;cursor:pointer}
+
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:110px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.pill{display:inline-flex;gap:8px;align-items:center;font-size:.82rem;padding:6px 14px;border:1px solid var(--line);border-radius:99px;color:var(--muted);margin-bottom:22px;background:rgba(255,255,255,.03)}
+.pill i{width:8px;height:8px;border-radius:50%;background:#5ee08a;box-shadow:0 0 0 4px rgba(94,224,138,.18)}
+.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.role{font-size:1.25rem;color:var(--blush);margin-bottom:16px;font-weight:500}
+.hero p.lead{color:var(--muted);max-width:520px;margin-bottom:30px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:600;font-size:.95rem;transition:transform .2s,background .2s,border-color .2s;border:1px solid transparent}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:linear-gradient(135deg,var(--rose),var(--wine));color:#fff;box-shadow:0 10px 30px -10px rgba(232,69,107,.6)}
+.btn.ghost{border-color:var(--line);background:rgba(255,255,255,.04)}
+.btn.ghost:hover{border-color:var(--accent)}
+.socials{display:flex;gap:12px;margin-top:28px}
+.socials a{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;background:rgba(255,255,255,.04);transition:.2s}
+.socials a:hover{border-color:var(--accent);background:rgba(232,69,107,.14);transform:translateY(-2px)}
+.socials svg{width:20px;height:20px;fill:currentColor}
+.card-id{position:relative;border-radius:28px;padding:34px 28px;text-align:center;background:linear-gradient(160deg,var(--wine),var(--wine-deep));border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 60px -25px rgba(0,0,0,.7)}
+.card-id::before{content:"";position:absolute;inset:-1px;border-radius:28px;background:linear-gradient(135deg,rgba(255,107,139,.5),transparent 40%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;padding:1px;pointer-events:none}
+.avatar{width:104px;height:104px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;font-family:Fraunces,serif;font-size:3rem;font-weight:700;background:var(--blush);color:var(--wine)}
+.card-id h3{font-size:1.3rem;margin-bottom:4px}
+.card-id p{color:var(--muted);font-size:.92rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+.tags span{font-size:.78rem;padding:4px 12px;border-radius:99px;background:rgba(255,255,255,.08)}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px}
+.about-grid p{color:var(--muted);margin-bottom:16px}
+.facts{display:grid;gap:12px}
+.fact{padding:18px 20px;border-radius:16px;background:var(--surface);border:1px solid var(--line)}
+.fact b{display:block;font-family:Fraunces,serif;font-size:1.05rem;margin-bottom:2px}
+.fact span{color:var(--muted);font-size:.9rem}
+
+/* skills */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.skill{padding:26px;border-radius:20px;background:var(--surface);border:1px solid var(--line);transition:.25s}
+.skill:hover{transform:translateY(-4px);border-color:rgba(255,107,139,.5);background:var(--surface-2)}
+.skill .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:1.3rem;background:rgba(232,69,107,.14);margin-bottom:16px}
+.skill h3{font-size:1.15rem;margin-bottom:6px}
+.skill p{color:var(--muted);font-size:.92rem;margin-bottom:14px}
+.bar{height:6px;border-radius:9px;background:rgba(255,255,255,.08);overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--wine),var(--rose));transition:width 1.2s ease}
+.bar-label{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted);margin-bottom:6px}
+
+/* projects */
+.proj{display:flex;flex-direction:column;padding:26px;border-radius:22px;background:var(--surface);border:1px solid var(--line);transition:.25s}
+.proj:hover{transform:translateY(-4px);border-color:rgba(255,107,139,.5)}
+.proj .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.status{font-size:.72rem;padding:3px 10px;border-radius:99px;font-weight:600}
+.status.done{background:rgba(94,224,138,.15);color:#7ff0a6}
+.status.soon{background:rgba(255,255,255,.08);color:var(--muted)}
+.proj h3{font-size:1.25rem;margin-bottom:8px}
+.proj p{color:var(--muted);font-size:.93rem;margin-bottom:16px;flex:1}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.stack span{font-size:.75rem;padding:3px 10px;border-radius:8px;background:rgba(255,255,255,.07)}
+.plinks{display:flex;gap:16px;font-size:.88rem;font-weight:600}
+.plinks a{color:var(--accent)}
+.plinks a:hover{text-decoration:underline}
+
+/* journey */
+.timeline{position:relative;padding-left:28px;display:grid;gap:26px;border-left:2px solid var(--line);margin-left:6px}
+.step{position:relative}
+.step::before{content:"";position:absolute;left:-37px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.step small{color:var(--accent);font-weight:600;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+.step h3{font-size:1.15rem;margin:2px 0 4px}
+.step p{color:var(--muted);font-size:.93rem}
+
+/* contact */
+.contact{text-align:center;padding:56px 24px;border-radius:30px;background:linear-gradient(160deg,var(--wine),var(--wine-deep));border:1px solid rgba(255,255,255,.12)}
+.contact h2{margin-bottom:12px}
+.contact p{color:var(--blush);opacity:.85;max-width:520px;margin:0 auto 28px}
+.contact .btns{justify-content:center}
+.contact .btn.ghost{background:rgba(0,0,0,.2)}
+footer{padding:36px 0;text-align:center;color:var(--muted);font-size:.85rem}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:820px){
+  .hero-grid,.about-grid{grid-template-columns:1fr}
+  .card-id{max-width:340px}
+  .burger{display:block}
+  .links{position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:rgba(21,4,8,.97);border-bottom:1px solid var(--line);display:none}
+  .links.open{display:flex}
+  .links a{display:block;padding:14px 20px}
+  section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="#home" class="logo">Nazish<span>.</span></a>
+      <button class="burger" aria-label="Menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
+      <ul class="links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="pill"><i></i> Open to learning &amp; collaboration</div>
+      <h1>Hello, I'm <em>Nazish Shafiq</em></h1>
+      <div class="role">Software Engineering Student</div>
+      <p class="lead">I'm learning programming, building my technical skills and creating software projects, one step at a time. Welcome to my personal portfolio.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">Explore My Work</a>
+        <a class="btn ghost" href="#contact">Contact Me</a>
+      </div>
+      <div class="socials">
+        <a href="#" data-link="github" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></a>
+        <a href="#" data-link="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="#" data-link="email" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13zm2.3.5L12 12.2 19.7 6H4.3zM20 7.9l-7.4 6a1 1 0 0 1-1.2 0L4 7.9V18h16V7.9z"/></svg></a>
+      </div>
+    </div>
+    <aside class="card-id reveal">
+      <div class="avatar">N</div>
+      <h3>Learn. Create. Grow.</h3>
+      <p>Turning ideas into code, one step at a time.</p>
+      <div class="tags"><span>C++</span><span>OOP</span><span>DSA</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+    </aside>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow">Get to know me</div>
+    <h2>About Me</h2>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>I'm a BS Software Engineering student at <strong>[Your University Name]</strong>. I enjoy programming, logical thinking and turning ideas into working software.</p>
+        <p>Right now I'm focused on C++, object-oriented programming, data structures and algorithms, and web development. I learn best by building, so I keep adding small projects to practise what I study.</p>
+        <p>My goal is to grow into a skilled software engineer who builds useful, well-crafted products.</p>
+      </div>
+      <div class="facts reveal">
+        <div class="fact"><b>Currently learning</b><span>C++, OOP, Data Structures &amp; Algorithms</span></div>
+        <div class="fact"><b>Also exploring</b><span>HTML, CSS, JavaScript and Git/GitHub</span></div>
+        <div class="fact"><b>Goal</b><span>Become a professional software engineer</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow">What I'm learning</div>
+    <h2>My Skills</h2>
+    <div class="grid">
+      <div class="skill reveal"><div class="ic">⌨️</div><h3>C++ Programming</h3><p>Programming fundamentals and problem solving.</p><div class="bar-label"><span>Progress</span><span>70%</span></div><div class="bar"><i data-w="70"></i></div></div>
+      <div class="skill reveal"><div class="ic">🧩</div><h3>OOP</h3><p>Classes, objects, inheritance and polymorphism.</p><div class="bar-label"><span>Progress</span><span>60%</span></div><div class="bar"><i data-w="60"></i></div></div>
+      <div class="skill reveal"><div class="ic">🌳</div><h3>Data Structures &amp; Algorithms</h3><p>Arrays, linked lists, stacks, queues and sorting.</p><div class="bar-label"><span>Progress</span><span>50%</span></div><div class="bar"><i data-w="50"></i></div></div>
+      <div class="skill reveal"><div class="ic">🌐</div><h3>Web Development</h3><p>Beginner-friendly websites with HTML, CSS and JavaScript.</p><div class="bar-label"><span>Progress</span><span>55%</span></div><div class="bar"><i data-w="55"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow">What I'm building</div>
+    <h2>Projects</h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(290px,1fr))">
+      <article class="proj reveal">
+        <div class="top"><span style="font-size:1.6rem">🖥️</span><span class="status done">Completed</span></div>
+        <h3>Personal Portfolio</h3>
+        <p>A responsive personal website that presents my education, skills, projects and contact details.</p>
+        <div class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        <div class="plinks"><a href="#" data-link="portfolio-live" target="_blank" rel="noopener">Live demo ↗</a><a href="#" data-link="portfolio-code" target="_blank" rel="noopener">Source code ↗</a></div>
+      </article>
+      <article class="proj reveal">
+        <div class="top"><span style="font-size:1.6rem">📚</span><span class="status soon">In progress</span></div>
+        <h3>C++ Console Project</h3>
+        <p>A menu-driven C++ application (for example a student record or library system) built with OOP concepts. Replace this with your real project.</p>
+        <div class="stack"><span>C++</span><span>OOP</span><span>File Handling</span></div>
+        <div class="plinks"><a href="#" data-link="cpp-code" target="_blank" rel="noopener">Source code ↗</a></div>
+      </article>
+      <article class="proj reveal">
+        <div class="top"><span style="font-size:1.6rem">✅</span><span class="status soon">Coming soon</span></div>
+        <h3>To-Do Web App</h3>
+        <p>A small interactive app to add, complete and delete tasks, saved in the browser with localStorage.</p>
+        <div class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        <div class="plinks"><a href="#" data-link="github" target="_blank" rel="noopener">Follow on GitHub ↗</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="wrap">
+    <div class="eyebrow">My progress</div>
+    <h2>Learning Journey</h2>
+    <div class="timeline">
+      <div class="step reveal"><small>Now</small><h3>University</h3><p>Studying Software Engineering and building a strong technical foundation.</p></div>
+      <div class="step reveal"><small>Now</small><h3>Practical Learning</h3><p>Practising C++, OOP and DSA, and building small web projects.</p></div>
+      <div class="step reveal"><small>Next</small><h3>Projects &amp; Certificates</h3><p>More portfolio projects, open-source practice and online courses.</p></div>
+      <div class="step reveal"><small>Goal</small><h3>Software Engineer</h3><p>Grow into a professional who builds reliable, useful software.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div class="eyebrow">Let's connect</div>
+      <h2>Contact Me</h2>
+      <p>I'm interested in learning, collaborating on projects and exploring software engineering opportunities. Feel free to reach out.</p>
+      <div class="btns">
+        <a class="btn primary" href="#" data-link="email">✉ Send Me an Email</a>
+        <a class="btn ghost" href="#" data-link="github" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn ghost" href="#" data-link="linkedin" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>Designed with care by Nazish Shafiq · © 2026 All rights reserved.</footer>
+
+<script>
+/* ======= EDIT YOUR LINKS HERE ======= */
+const LINKS = {
+  github:         "https://github.com/NazishShafiq",
+  linkedin:       "https://www.linkedin.com/in/nazish-shafiq-046bb0389",
+  email:          "mailto:nazishshafiq.se@gmail.com",
+  "portfolio-live": "https://NazishShafiq.github.io/",
+  "portfolio-code": "https://github.com/NazishShafiq/NazishShafiq.github.io",
+  "cpp-code":       "https://github.com/NazishShafiq/YOUR-CPP-REPO"
+};
+/* ===================================== */
+document.querySelectorAll("[data-link]").forEach(a => { a.href = LINKS[a.dataset.link] || "#"; });
+document.querySelectorAll(".links a").forEach(a => a.addEventListener("click", () => document.querySelector(".links").classList.remove("open")));
+
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) {
+    e.target.classList.add("in");
+    e.target.querySelectorAll(".bar i").forEach(b => b.style.width = b.dataset.w + "%");
+    io.unobserve(e.target);
+  }
+}), { threshold: .15 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+const secs = [...document.querySelectorAll("main section")], navA = [...document.querySelectorAll(".links a")];
+addEventListener("scroll", () => {
+  let cur = secs[0].id;
+  secs.forEach(s => { if (scrollY + 120 >= s.offsetTop) cur = s.id; });
+  navA.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + cur));
+}, { passive: true });
+</script>
+</body>
+</html>
